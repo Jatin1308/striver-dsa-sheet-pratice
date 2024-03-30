@@ -1,1 +1,1 @@
-This is the repo to practice all the coding problems by striver for DSA preparation.
+Solution problems for A2Z sheet.
