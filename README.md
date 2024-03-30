@@ -1,1 +1,1 @@
-# striver-dsa-sheet-pratice
+This is the repo to practice all the coding problems by striver for DSA preparation.
