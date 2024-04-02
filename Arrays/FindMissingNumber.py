@@ -25,4 +25,5 @@ def missingNumber(nums: List[int]) -> int:
         ans ^= num
     return ans
 
-print(missingNumber([3,0,1]))
+
+print(missingNumber([3, 0, 1]))
