@@ -1,17 +1,26 @@
-def traffic(n: int, m: int, vehicle: [int]) -> int:
-    # m -> how many ones are flipped
+def traffic(n, m, arr):
+    i = 0 # lazy window pointer
+    j = 0 # continuous iterator
     zeroCount = 0
-    i = 0
     ans = 0
-    for j in range(len(vehicle)):
-        if vehicle[j] == 0:
+
+    while j < n:
+        if arr[j] == 0:
             zeroCount += 1
-
         while zeroCount > m:
-            if vehicle[i] == 0:
+            if arr[i] == 0:
                 zeroCount -= 1
-                i += 1
-        ans = max(ans, j - i + 1)
-        return ans
+            i += 1
+        ans = max(ans,j-i+1)
+        j += 1
+    return ans
 
-print(traffic(5,2,[1,1,0,0,1]))
+
+
+
+
+
+
+# print(traffic(3,1,[0,1,1]))
+
+print(traffic(6, 3, [0, 1, 0, 0, 1, 0]))
