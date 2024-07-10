@@ -19,6 +19,7 @@ def binarySearch(arr,low,mid,high,target):
 
 def search(arr: List[int], target: int) -> int:
     low = 0
+
     high = len(arr)-1
     mid = (low+high) //2
     return binarySearch(arr,low,mid,high,target)
