@@ -10,5 +10,8 @@ def removeDuplicates(arr, n):
 
     # by creating a set -> O(nlogn) +O(n)
 
+arr = [1, 2, 2, 3, 3, 4]
+res = (removeDuplicates(arr, 6))
 
-print(removeDuplicates([1, 2, 2, 3, 3, 4], 6))
+print(arr[:res],arr)
+
