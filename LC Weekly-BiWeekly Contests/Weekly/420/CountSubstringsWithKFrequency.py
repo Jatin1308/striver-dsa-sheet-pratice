@@ -86,8 +86,40 @@ def numberOfSubstrings(s: str, k: int) -> int:
     return totalCount
 '''
 
+def numberOfSubstrings(s: str, k: int) -> int:
+    n = len(s)
+    total_count = 0
 
-# print(numberOfSubstrings("abacb",2))
+    # Use a frequency array for 26 lowercase letters
+    freq = [0] * 26
+    
+    # Iterate through all possible starting points for substrings
+    for start in range(n):
+        # Reset frequency array for new start
+        freq = [0] * 26
+        count_at_least_k = 0
+        
+        # Expand the end pointer
+        for end in range(start, n):
+            # Update frequency of the current character
+            char_index = ord(s[end]) - ord('a')
+            freq[char_index] += 1
+            
+            # If the character count reaches k, increase the valid count
+            if freq[char_index] == k:
+                count_at_least_k += 1
+            
+            # If there's at least one character with count >= k,
+            # count all substrings from start to end as valid.
+            if count_at_least_k > 0:
+                total_count += 1
+
+    return total_count
+
+# Test the function with the provided test case
+
+
+print(numberOfSubstrings("abacb",2))
 
 
 # print(numberOfSubstrings("abcde",1))
