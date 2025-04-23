@@ -13,7 +13,6 @@ def threeSum(arr: List[int]) -> List[List[int]]:
     
     arr = sorted(arr)
     ans = []
-    fs = {}
     for i in range(len(arr)):
         if i>0 and arr[i] ==  arr[i-1]:
             continue
@@ -35,9 +34,9 @@ def threeSum(arr: List[int]) -> List[List[int]]:
                 j+=1
                 k-=1
 
-                while (j<k and arr[j] == arr[j-1]):
+                while j<k and arr[j] == arr[j - 1]:
                     j+=1
-                while (j < k and arr[k] == arr[k+1]):
+                while j < k and arr[k] == arr[k + 1]:
                     k-=1
     return ans
 
